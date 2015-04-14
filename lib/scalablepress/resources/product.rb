@@ -13,12 +13,12 @@ module Scalablepress
       @product_info = API.get("products/#{@product_id}")
     end
 
-    def color_list
+    def colors
       @colors = product_info["colors"]
       @colors.map {|c| c["name"] }
     end
 
-    def image_urls_for(color)
+    def images_for_color(color)
       matched_color = product_info["colors"].select {|c| c["name"] == color }.first
       return unless matched_color
       images = matched_color["images"]
