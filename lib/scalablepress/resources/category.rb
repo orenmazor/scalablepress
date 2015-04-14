@@ -4,7 +4,6 @@ module Scalablepress
     attr_reader :category_id
 
     def initialize(params)
-      puts params
       @name = params["name"]
       @category_id = params["categoryId"]
     end

@@ -20,9 +20,9 @@ module Scalablepress
 
     def images_for_color(color)
       matched_color = product_info["colors"].select {|c| c["name"] == color }.first
-      return unless matched_color
+      raise "#{color} is invalid color selection for #{colors.join(", ")}" unless matched_color
       images = matched_color["images"]
-      return unless images.any?
+      raise "Found no images for #{color}!" unless images.any?
       images.map {|x| x["url"] }
     end
 
