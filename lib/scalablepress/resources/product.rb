@@ -19,7 +19,11 @@ module Scalablepress
     end
 
     def image_urls_for(color)
-      API.get("products/#{@product_id}")["colors"].select {|c| c["name"] == color }
+      matched_color = product_info["colors"].select {|c| c["name"] == color }.first
+      return unless matched_color
+      images = matched_color["images"]
+      return unless images.any?
+      images.map {|x| x["url"] }
     end
 
     def self.all
