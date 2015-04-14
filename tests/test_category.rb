@@ -8,4 +8,10 @@ class TestCategory < Minitest::Test
     assert categories.any?
     assert categories.first.is_a?(Scalablepress::Category)
   end
+
+  def test_category_find
+    category = Scalablepress::Category.find_by_id("sweatshirts")
+
+    assert category.name == "Sweatshirts"
+  end
 end
