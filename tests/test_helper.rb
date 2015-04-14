@@ -1,0 +1,1 @@
+Scalablepress::API_KEY = ENV["SCALABLE_PRESS_API_KEY"]

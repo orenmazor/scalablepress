@@ -12,6 +12,7 @@ GEM
     http-cookie (1.0.2)
       domain_name (~> 0.5)
     mime-types (2.4.3)
+    minitest (5.5.1)
     netrc (0.10.3)
     rake (10.4.2)
     rest-client (1.8.0)
@@ -27,5 +28,6 @@ PLATFORMS
 
 DEPENDENCIES
   bundler (~> 1.7)
+  minitest
   rake (~> 10.0)
   scalablepress!
